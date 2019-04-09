@@ -38,4 +38,4 @@ const MapStateToProps = state=>{
 }
 
 
-export default connect(MapStateToProps,{changeTodo,})(AddTodoForm)
+export default connect(MapStateToProps,{changeTodo})(AddTodoForm)
