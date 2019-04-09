@@ -18,9 +18,11 @@ props.completed(newArray)
 
 
 return(
+    <div className='list-container'>
     <div className={`todo${props.todo.completed ? " completed": null}`}>
     <p  onClick={() => toggleComplete(props.todo.id)}> {props.todo.value}</p>
-    <button onClick={() => props.deleteTodo(props.todo.id)}>Delete Item</button>
+    </div>
+    <span onClick={() => props.deleteTodo(props.todo.id)}>x</span>
     </div>
     )
 }

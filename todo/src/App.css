@@ -6,3 +6,15 @@
   text-decoration: line-through;
   color:black ;
 }
+ p{
+   margin-right:40px;
+ }
+ span{
+   color:red;
+   margin-right:40px;
+ }
+ .list-container{
+   display:flex;
+   margin-left:45%;
+   align-items:center;
+ }

@@ -8,13 +8,13 @@ class AddTodoForm extends React.Component{
     };
 
     changeHandler = e => {
-    e.preventDefault();
-    this.setState({inputText: e.target.value});
+    this.setState({newtodo: e.target.value});
       }
 
     addTodo = e => {
     e.preventDefault()
-    this.props.changeTodo(this.state.inputText);
+    this.props.changeTodo(this.state.newtodo);
+    this.setState({newtodo: ""})
     };
     
         
@@ -22,7 +22,7 @@ class AddTodoForm extends React.Component{
     render(){
         return(
             <div className='todo-container'>
-            <input  name='todo' type='text' placeholder='todo' onChange={this.changeHandler} value={this.inputText}></input>
+            <input  name='todo' type='text' placeholder='todo' onChange={this.changeHandler} value={this.newtodo}></input>
             <button onClick={this.addTodo} >Add a Task</button>
             <p>{this.todo}</p>
             </div>
@@ -33,7 +33,7 @@ class AddTodoForm extends React.Component{
 const MapStateToProps = state=>{
     return{
         TodoOnProps:state.todo,
-        inputText:state.inputText
+        newtodo:state.newtodo
     }
 }
 
