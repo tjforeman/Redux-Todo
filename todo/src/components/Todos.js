@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux'
-import {completed} from '../actions'
+import {completed,deleteTodo} from '../actions'
 
 const Todos = props =>{
 
@@ -19,7 +19,8 @@ props.completed(newArray)
 
 return(
     <div className={`todo${props.todo.completed ? " completed": null}`}>
-    <ul  onClick={() => toggleComplete(props.todo.id)}> {props.todo.value}</ul>
+    <p  onClick={() => toggleComplete(props.todo.id)}> {props.todo.value}</p>
+    <button onClick={() => props.deleteTodo(props.todo.id)}>Delete Item</button>
     </div>
     )
 }
@@ -29,4 +30,4 @@ const mapStateToProps = state => {
     todos: state.todos
     }
   }
-  export default connect(mapStateToProps, {completed})(Todos);
+  export default connect(mapStateToProps, {completed,deleteTodo})(Todos);
