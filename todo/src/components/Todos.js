@@ -1,17 +1,17 @@
-import React from 'react'
-import { connect } from "react-redux";
+import React from "react";
+import { connect } from 'react-redux'
 
-class Todos extends React.Component{
-    state={
-        todo:""
-    };
+const Todos = props =>{
+return(
+    <div>
+    <ul> {props.todo.value}</ul>
+    </div>
+    )
 }
 
-const MapStateToProps = state=>{
-    return{
-        TodoOnProps:state.todo
+const mapStateToProps = state => {
+    return {
+    todos: state.todos
     }
-}
-
-
-export default connect(MapStateToProps,{})(Todos)
+  }
+  export default connect(mapStateToProps, {})(Todos);
